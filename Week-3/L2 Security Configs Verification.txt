@@ -1,0 +1,18 @@
+! --- LAYER 2 SWITCHPORT SECURITY ENFORCEMENT ---
+interface FastEthernet0/10
+ description Secure Link to Raspberry Pi
+ switchport mode access
+ switchport access vlan 20
+ switchport port-security
+ switchport port-security maximum 1
+ switchport port-security mac-address b827.ebc7.e9c9
+ switchport port-security violation shutdown
+!
+! --- VERIFICATION LOG ---
+Switch# show port-security interface fa0/10
+Port Security              : Enabled
+Port Status                : Secure-up
+Violation Mode             : Shutdown
+Maximum MAC addresses      : 1
+Total MAC addresses        : 1
+Configured MAC addresses   : 1 (b827.ebc7.e9c9)
