@@ -1,0 +1,13 @@
+! --- RETAINED GATEWAY NAT CONFIGURATION BLUEPRINT ---
+interface GigabitEthernet0/0
+ description Internet-Facing WAN Interface
+ ip address dynamic
+ ip nat outside
+!
+interface GigabitEthernet0/1
+ description Local Home Network Gateway
+ ip address 192.168.100.1 255.255.255.0
+ ip nat inside
+!
+ip nat inside source list 1 interface GigabitEthernet0/0 overload
+access-list 1 permit 192.168.100.0 0.0.0.255
