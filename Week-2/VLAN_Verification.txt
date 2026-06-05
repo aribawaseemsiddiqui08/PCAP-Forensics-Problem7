@@ -1,0 +1,7 @@
+Switch# show vlan brief
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/1, Fa0/2, Fa0/3, Fa0/4
+10   Management_LAN                   active    Fa0/5, Fa0/6
+20   IoT_Isolated                     active    Fa0/10, Fa0/11, Fa0/12
